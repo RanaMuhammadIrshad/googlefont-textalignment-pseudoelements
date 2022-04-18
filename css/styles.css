@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Hurricane&family=Montserrat:ital,wght@0,100;0,800;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* STEP 1 set font-size: 62.5% */
+html {
+  font-size: 62.5%; /* equals 10px */
+}
+/* STEP 2 font-size: 1.6rem; */
+body {
+  font-size: 1.6rem; /* browser default is 16px for most browsers */
+}
+
+.hurricane {
+  font-family: "Hurricane", cursive;
+  font-size: 2.5rem;
+}
+
+.monserrat {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+}
+
+/*
+    if you import several styles of the same font you 
+    can use font-style and/or font-weight to specify
+    which one to use 
+*/
+
+.monserratExtraBold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.monserratItalic {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-size: 2.5rem;
+}
+
+/* ALIGNMENT */
+
+.box {
+  width: 200px;
+  padding: 1.5rem;
+  background-color: aqua;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: end;
+}
+
+.rtl {
+  /* 
+    to change direction to RTL use the direction property 
+    Specifically for rtl languages (arabic etc.. )
+    */
+  direction: rtl;
+}
+
+/* TEXT TRANSFORMATIONS */
+.capitalize {
+  text-transform: capitalize;
+  background-color: lightcoral;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  background-color: lightsalmon;
+}
+
+.lowercase {
+  text-transform: lowercase;
+  background-color: lightskyblue;
+}
+
+/* TEXT SHADOW */
+
+.shadow {
+  /* offset-x | offset-y | blur-radius | color */
+  text-shadow: 20px 10px 10px red;
+}
+
+/* PSEUDO ELEMENTS */
+/* allow you to add extra elements without modifying your html */
+.pseudoElements {
+  background-color: lightpink;
+  padding: 1.6rem;
+}
+
+.pseudoElements::before,
+.pseudoElements::after {
+  /* make sure you always have a content property when using pseudo elements */
+  content: "text";
+  color: blue;
+}
+
+/* ADD HOVER TO PSEUDO ELEMENTS */
+
+.pseudoElements:hover::before {
+  content: ".:";
+  color: maroon;
+}
+
+.pseudoElements:hover::after {
+  content: ":.";
+  color: maroon;
+}
+
+.pdf {
+  position: relative;
+  background-color: mediumpurple;
+  padding: 1.5rem 4rem;
+}
+
+.pdf::before {
+  content: "";
+  /* adding img via bg-image property */
+  background-image: url("../images/pdf.png");
+  /* I need to set a size for the bg to show */
+  width: 30px;
+  height: 30px;
+  /* set display inline-block for the bg to show */
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* let's position the icon a bit better */
+  position: absolute; /* make sure the parent has some positioning  */
+  bottom: 10px;
+  left: 5px;
+}
